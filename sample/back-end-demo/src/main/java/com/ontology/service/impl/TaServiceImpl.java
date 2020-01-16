@@ -55,7 +55,7 @@ public class TaServiceImpl implements TaService {
     public void init() throws Exception {
         // init signingSdk
         signingSdk = SigningSdk.getInstance(configParam.SIGNING_SERVER_URL);
-        signingSdk.init("ericyansdemo.app.ont", "L49zU8WTRVqJY3V3q1pt3pRBkuH3dUWd6tCBDnScVCZUpTVeR6E3");
+        signingSdk.init("your app domain", "your app wif");
 
         // edit ClaimTemplate
         ClaimTemplate test = new ClaimTemplate();
@@ -223,7 +223,7 @@ public class TaServiceImpl implements TaService {
             throw new OntIdException(action, ErrorInfo.NOT_FOUND.descCN(), ErrorInfo.NOT_FOUND.descEN(), ErrorInfo.NOT_FOUND.code());
         }
         if (verified) {
-            // 查找注册信息
+            // find register info
             Register register = new Register();
             register.setOntid(ontid);
             register = registerMapper.selectOne(register);
